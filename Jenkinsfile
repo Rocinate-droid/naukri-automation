@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh '''
                 aws s3 cp s3://resume-bucket-srj/srjresume ./
+                mv srjresume srjresume.pdf
                 '''
             }
         }
