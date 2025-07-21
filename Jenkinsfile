@@ -7,7 +7,7 @@ pipeline {
         stage('extract resume') {
             steps {
                 sh '''
-                aws s3 cp s3://resume-bucket-srj/srjresume ./
+                
                 '''
             }
         }
