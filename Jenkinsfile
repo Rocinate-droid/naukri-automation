@@ -3,6 +3,7 @@ pipeline {
     environment {
         CV_EMAIL = credentials('naukri-login')
     }
+      stages {
         stage('execute') {
             steps {
                 sh '''
@@ -12,5 +13,6 @@ pipeline {
                 '''
             }
         }
+   }
 }
 
