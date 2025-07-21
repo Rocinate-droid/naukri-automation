@@ -43,7 +43,7 @@ public class AppTest
         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
         driver.findElement(By.cssSelector("div[class=\"view-profile-wrapper\"]")).click();;
         WebElement uploadbutton = driver.findElement(By.cssSelector("input[type=\"file\"][id=\"attachCV\"]"));
-        uploadbutton.sendKeys("path");
+        uploadbutton.sendKeys(path);
     }
 
 }
