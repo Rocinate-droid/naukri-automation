@@ -34,10 +34,10 @@ public class AppTest
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.partialLinkText("Login")));
         driver.findElement(By.partialLinkText("Login")).click();
-        WebElement email = driver.findElement(By.xpath("//input[@type=\"text\"][@placeholder=\"Enter your active Email ID / Username\"]"));
-        WebElement password = driver.findElement(By.cssSelector("input[type=\"password\"]"));
-        email.sendKeys(email);
-        password.sendKeys(password);
+        WebElement emailfield = driver.findElement(By.xpath("//input[@type=\"text\"][@placeholder=\"Enter your active Email ID / Username\"]"));
+        WebElement passwordfield = driver.findElement(By.cssSelector("input[type=\"password\"]"));
+        emailfield.sendKeys(email);
+        passwordfield.sendKeys(password);
         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
         driver.findElement(By.cssSelector("div[class=\"view-profile-wrapper\"]")).click();;
         WebElement uploadbutton = driver.findElement(By.cssSelector("input[type=\"file\"][id=\"attachCV\"]"));
