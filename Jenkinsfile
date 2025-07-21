@@ -7,7 +7,7 @@ pipeline {
         stage('extract resume') {
             steps {
                 sh '''
-                
+                aws s3 cp s3://resume-bucket-srj/srjresume ./
                 '''
             }
         }
@@ -16,7 +16,7 @@ pipeline {
                 sh '''
                 echo $WORKSPACE
                 mvn compile
-                mvn test -Demail=$CV_EMAIL_USR -Dpassword=$CV_EMAIL_PSW
+                mvn test -Demail=$CV_EMAIL_USR -Dpassword=$CV_EMAIL_PSW -Dresumepath=$WORKSPACE/srjresume.pdf
                 mvn clean
                 '''
             }

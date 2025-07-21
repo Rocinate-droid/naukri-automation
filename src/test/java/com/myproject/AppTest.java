@@ -32,6 +32,7 @@ public class AppTest
     public void login(){
 	String email = System.getProperty("email");
 	String password = System.getProperty("password");
+    String path  = System.getProperty("resumepath");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.partialLinkText("Login")));
         driver.findElement(By.partialLinkText("Login")).click();
@@ -42,7 +43,7 @@ public class AppTest
         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
         driver.findElement(By.cssSelector("div[class=\"view-profile-wrapper\"]")).click();;
         WebElement uploadbutton = driver.findElement(By.cssSelector("input[type=\"file\"][id=\"attachCV\"]"));
-        uploadbutton.sendKeys("/var/lib/jenkins/workspace/naukri/srjresume");
+        uploadbutton.sendKeys("path");
     }
 
 }
