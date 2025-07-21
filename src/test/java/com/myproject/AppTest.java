@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.S3ResumeDownload.s3;
 import com.Utils.utils;;
 
 /**
@@ -41,7 +42,7 @@ public class AppTest
         driver.findElement(By.cssSelector("button[type=\"submit\"]")).click();
         driver.findElement(By.cssSelector("div[class=\"view-profile-wrapper\"]")).click();;
         WebElement uploadbutton = driver.findElement(By.cssSelector("input[type=\"file\"][id=\"attachCV\"]"));
-        uploadbutton.sendKeys("/mnt/d/Resume (2).pdf");
+        uploadbutton.sendKeys("/var/lib/jenkins/workspace/naukri/srjresume");
     }
 
 }
