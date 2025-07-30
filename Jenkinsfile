@@ -11,14 +11,14 @@ pipeline {
         }
         stage('execute') {
             steps {
-                withCredentials([usernamePassword(credentialsId:'naukri-login', usernameVariable:'email', passwordVariable:'password')]){
-                sh '''
-                echo $WORKSPACE
-                mvn compile
-                mvn test -Demail=$email -Dpassword=$password
-                mvn clean
-                '''
-                }
+                 withCredentials([usernamePassword(credentialsId: 'naukri-login', usernameVariable: 'email', passwordVariable: 'password')]) {
+        sh '''
+            echo $WORKSPACE
+            mvn compile
+            mvn test -Demail=$email -Dpassword=$password
+            mvn clean
+        '''
+    }
             }
         }
    }
