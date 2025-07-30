@@ -38,7 +38,7 @@ public class AppTest
 	String password = System.getProperty("password");
     File file = new File("srjresume.pdf");
     String absolutePath = file.getAbsolutePath();
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     Thread.sleep(5000);
     TakesScreenshot scr  = (TakesScreenshot) driver;
         File srcfile = scr.getScreenshotAs(OutputType.FILE);
