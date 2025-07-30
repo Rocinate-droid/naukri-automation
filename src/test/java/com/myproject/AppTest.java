@@ -1,9 +1,13 @@
 package com.myproject;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -29,12 +33,17 @@ public class AppTest
     }
 
     @Test
-    public void login(){
+    public void login() throws IOException, InterruptedException{
 	String email = System.getProperty("email");
 	String password = System.getProperty("password");
     File file = new File("srjresume.pdf");
     String absolutePath = file.getAbsolutePath();
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    Thread.sleep(5000);
+    TakesScreenshot scr  = (TakesScreenshot) driver;
+        File srcfile = scr.getScreenshotAs(OutputType.FILE);
+        String destfile = System.getProperty("user.dir") + File.separator + "scr.png";
+        FileUtils.copyFile(srcfile, new File(destfile));
     wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[id=\"login_Layer\"][title=\"Jobseeker Login\"]")));
     driver.findElement(By.cssSelector("a[id=\"login_Layer\"][title=\"Jobseeker Login\"]")).click();
     WebElement emailfield = driver.findElement(By.xpath("//input[@type=\"text\"][@placeholder=\"Enter your active Email ID / Username\"]"));
