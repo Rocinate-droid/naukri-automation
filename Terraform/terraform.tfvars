@@ -1,0 +1,6 @@
+region = "us-east-1"
+bucketname = "resume-bucket-srj"
+keyname = "srjresume"
+sourceoffile = "./sreejith-resume-2025.pdf"
+start-function = "start-instance"
+stop-function = "stop-instance"
