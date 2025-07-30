@@ -10,9 +10,13 @@ public class utils {
     public static WebDriver getbrowserinstance(String browsername) {
         if (browsername.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new");  // Headless mode
-            options.addArguments("--window-size=1920,1080");  // Important!
-            options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/114.0.0.0 Safari/537.36");
+           options.addArguments("--headless=new"); // <- swap "--headless=new" with this
+           options.addArguments("--no-sandbox");
+           options.addArguments("--disable-dev-shm-usage");
+           options.addArguments("--window-size=1920,1300");
+           options.addArguments("--disable-gpu");
+           options.addArguments("--remote-allow-origins=*");
+           options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
             return new ChromeDriver(options);
         } else {
             return new EdgeDriver();
