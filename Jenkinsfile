@@ -11,7 +11,7 @@ pipeline {
         }
         stage('execute') {
             steps {
-                withCredentials([usernamePassword(CredentialsId:'naukri-login', usernameVariable:'email', passwordVariable:'password')]){
+                withCredentials([usernamePassword(credentialsId:'naukri-login', usernameVariable:'email', passwordVariable:'password')]){
                 sh '''
                 echo $WORKSPACE
                 mvn compile
