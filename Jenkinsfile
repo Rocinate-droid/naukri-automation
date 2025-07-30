@@ -15,7 +15,7 @@ pipeline {
         sh '''
             echo $WORKSPACE
             mvn compile
-            mvn test -Demail=$email -Dpassword=$password
+            xvfb-run -a mvn test -Demail=$email -Dpassword=$password
             mvn clean
         '''
     }
