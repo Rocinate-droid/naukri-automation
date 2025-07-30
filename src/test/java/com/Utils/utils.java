@@ -10,12 +10,11 @@ public class utils {
     public static WebDriver getbrowserinstance(String browsername) {
         if (browsername.equals("chrome")) {
             ChromeOptions options = new ChromeOptions();
-           options.addArguments("--headless=chrome"); // use stable headless mode
+           options.addArguments("--headless=new"); // <- swap "--headless=new" with this
            options.addArguments("--no-sandbox");
            options.addArguments("--disable-dev-shm-usage");
            options.addArguments("--window-size=1920,1300");
            options.addArguments("--disable-gpu");
-           options.addArguments("--remote-debugging-port=9222"); // helps with DevToolsActivePort
            options.addArguments("--remote-allow-origins=*");
            options.addArguments("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
             return new ChromeDriver(options);
