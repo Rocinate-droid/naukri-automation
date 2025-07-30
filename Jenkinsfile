@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        CV_EMAIL = credentials('naukri-login')
-    }
       stages {
         stage('extract resume') {
             steps {
